@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 19:32:00 by vico              #+#    #+#             */
-/*   Updated: 2021/09/26 17:31:35 by vico             ###   ########.fr       */
+/*   Updated: 2021/11/02 18:50:37 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ int	main(void)
 	ft_putstr_fd("\n", 1);
 	signal(SIGUSR1, detect_signal);
 	signal(SIGUSR2, detect_signal);
+	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
 	}

@@ -6,7 +6,7 @@
 /*   By: vico <vico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 19:39:40 by vico              #+#    #+#             */
-/*   Updated: 2021/09/25 21:57:38 by vico             ###   ########.fr       */
+/*   Updated: 2021/11/02 18:43:38 by vico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ int	main(int ac, char **av)
 		return (error_msg("Bad arguments"));
 	signal(SIGUSR1, wait_check_signal);
 	pid = ft_atoi(av[1]);
+	if (kill(pid, SIGINT) == -1)
+		return (error_msg("Error : pid doesn't work"));
 	add = ft_itoa(getpid());
 	len = ft_strlen(add);
 	if (!add)
